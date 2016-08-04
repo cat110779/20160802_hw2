@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.math.RandomUtils;
+
 import model.Item;
 
 public class ItemDAO extends Database{
@@ -20,10 +22,10 @@ public class ItemDAO extends Database{
 		try {
 			conn = getConnection();
 			
-			sql = "insert into item values (null,?,?,?)";
-			ps = conn.prepareStatement(sql);
+			
 			for(Item item:iList){
-				
+				sql = "insert into item values ("+RandomUtils.nextInt(99999)+",?,?,?)";
+				ps = conn.prepareStatement(sql);
 				ps.setInt(1,item.getProductId());
 				ps.setInt(2,item.getOrderId());
 				ps.setString(3, item.getProductName());

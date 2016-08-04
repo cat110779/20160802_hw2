@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang.math.RandomUtils;
+
 import model.Order;
 import model.OrderSuper;
 
@@ -22,7 +24,7 @@ public class OrderDAO extends Database{
 	public void insertOrder(Order o){
 		try {
 			conn = getConnection();
-			sql = "insert into orders values(null,?,?,?,?,?,'進行中',?,?)";
+			sql = "insert into orders values("+RandomUtils.nextInt(99999)+",?,?,?,?,?,'進行中',?,?)";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1,o.getRestaurantId());
 			ps.setTimestamp(2, o.getBeginTime());
