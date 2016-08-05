@@ -38,7 +38,7 @@ public class UserDAOImpl extends Database implements UserDAO{
 			}
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			System.out.println(e);;
 			e.printStackTrace();
 		}finally{
 			try {
@@ -47,6 +47,7 @@ public class UserDAOImpl extends Database implements UserDAO{
 				connection.close();
 			} catch (Exception e2) {
 				e2.printStackTrace();
+				System.out.println(e2);;
 			}
 		}
 		return member;

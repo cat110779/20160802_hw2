@@ -9,18 +9,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.h2.tools.Server;
 
 public class Database {
 
 	private static Connection connect;
-	//final static String driver = "org.h2.Driver";
-	//final static String url = "jdbc:h2:mem:testdb;MODE=Oracle;INIT=runscript from \'classpath:scripts/jamari.sql\' ";
-	//final static String userid = "sa";
-	//final static String passwd=""; 
-	final static String driver = "oracle.jdbc.driver.OracleDriver";
-	final static String url = "jdbc:oracle:thin:@192.168.7.34:1521:orcl";
-	final static String userid = "esbappadm";
-	final static String passwd="esbappadm"; 
+	final static String driver = "org.h2.Driver";
+	final static String url = "jdbc:h2:mem:testdb;MODE=Oracle;INIT=runscript from \'classpath:scripts/jamari.sql\' ";
+	final static String userid = "sa";
+	final static String passwd=""; 
+//	final static String driver = "oracle.jdbc.driver.OracleDriver";
+//	final static String url = "jdbc:oracle:thin:@192.168.7.34:1521:orcl";
+//	final static String userid = "esbappadm";
+//	final static String passwd="esbappadm"; 
 	private static 	BasicDataSource bds =null;
 	static{
 		bds = new org.apache.commons.dbcp2.BasicDataSource();
@@ -29,6 +30,9 @@ public class Database {
 		bds.setUsername(userid);
 		bds.setPassword(passwd);
 		bds.setInitialSize(3);
+		
+		 
+       
 	}
 	public static Connection getConnection() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 

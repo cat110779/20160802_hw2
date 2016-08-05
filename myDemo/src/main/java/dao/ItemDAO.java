@@ -21,11 +21,11 @@ public class ItemDAO extends Database{
 	public void insertItemList(List<Item> iList){
 		try {
 			conn = getConnection();
-			
+			sql = "insert into item values (null,?,?,?)";
+			ps = conn.prepareStatement(sql);
 			
 			for(Item item:iList){
-				sql = "insert into item values ("+RandomUtils.nextInt(99999)+",?,?,?)";
-				ps = conn.prepareStatement(sql);
+				
 				ps.setInt(1,item.getProductId());
 				ps.setInt(2,item.getOrderId());
 				ps.setString(3, item.getProductName());
