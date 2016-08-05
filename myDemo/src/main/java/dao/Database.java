@@ -17,7 +17,7 @@ public class Database {
 	final static String driver = "org.h2.Driver";
 	final static String url = "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=Oracle;INIT=runscript from \'classpath:scripts/jamari.sql\' ";
 	final static String userid = "sa";
-	final static String passwd=""; 
+	final static String passwd = ""; 
 //	final static String driver = "oracle.jdbc.driver.OracleDriver";
 //	final static String url = "jdbc:oracle:thin:@192.168.7.34:1521:orcl";
 //	final static String userid = "esbappadm";
@@ -29,10 +29,7 @@ public class Database {
 		bds.setUrl(url);		 
 		bds.setUsername(userid);
 		bds.setPassword(passwd);
-		bds.setInitialSize(3);
-		
-		 
-       
+		bds.setInitialSize(3); 
 	}
 	public static Connection getConnection() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 
