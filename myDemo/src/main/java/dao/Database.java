@@ -15,7 +15,8 @@ public class Database {
 
 	private static Connection connect;
 	final static String driver = "org.h2.Driver";
-	final static String url = "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=Oracle;INIT=runscript from \'classpath:scripts/jamari.sql\' ";
+	//runscript from 'classpath:/jp/seraphyware/sample/h2test/ddl.sql' charset 'UTF-8'
+	final static String url = "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=Oracle;INIT=runscript from \'classpath:scripts/jamari.sql\'  charset  \'UTF-8\' ";
 	final static String userid = "sa";
 	final static String passwd = ""; 
 //	final static String driver = "oracle.jdbc.driver.OracleDriver";
