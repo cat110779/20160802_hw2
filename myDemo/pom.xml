@@ -7,7 +7,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>myDemo Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		 
 
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -98,11 +103,15 @@
 		</resources>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5</version>
 				<configuration>
-					<encoding>utf-8</encoding>
-					<source>1.8</source>
-					<target>1.8</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -112,7 +121,7 @@
 
 				<configuration>
 
-					<encoding>utf-8</encoding>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
 		</plugins>
